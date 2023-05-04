@@ -1,7 +1,8 @@
 /*
-* Auth: edwin nyongesa
-* File: 0-binary
+* Author: edwin nyongesa
+* File: 0-binary_to_uint.c
 */
+
 #include "main.h"
 
 /**
@@ -13,28 +14,28 @@
 */
 unsigned int binary_to_uint(const char *b)
 {
-/* num is the converted number, mult is the current binary multiplier */
 	unsigned int num = 0, mult = 1;
-/* len is the length of the binary string */
 	int len;
 
 /* Check if b is null */
 	if (b == '\0')
 		return (0);
 
-/* Determine length of b */
+/* Calculate the length of the string */
 	for (len = 0; b[len];)
 		len++;
 
-/* Convert binary string to unsigned integer */
+/* Convert the binary string to an unsigned integer */
 	for (len -= 1; len >= 0; len--)
 	{
-/* If char is not a binary digit, return 0 */
+/* Check if the character is a valid binary digit */
 		if (b[len] != '0' && b[len] != '1')
 			return (0);
 
-/* Add digit to the converted number */
+/* Convert the binary digit to an integer and add it to the result */
 		num += (b[len] - '0') * mult;
+
+/* Multiply the multiplier by 2 to calculate the next digit's value */
 		mult *= 2;
 	}
 

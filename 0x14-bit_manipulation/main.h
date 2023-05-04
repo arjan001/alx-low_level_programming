@@ -1,12 +1,6 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-/*
- * File: MAIN.h
- * AUth: EDWIN NYONGESA
- * Desc: file containing prototypes for all functions
- *       written in the 0x13-bit_manipulation directory.
- */
 
 /**
  * _putchar - writes the character c to stdout
