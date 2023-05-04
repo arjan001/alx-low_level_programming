@@ -1,6 +1,6 @@
 /*
  * File: 3-set_bit.c
- * Auth: Your Name
+ * Auth: edwin nyongesa
  * Date: May 4th, 2023
  */
 
