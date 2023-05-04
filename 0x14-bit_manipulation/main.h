@@ -1,74 +1,37 @@
 #ifndef MAIN_H
 #define MAIN_H
 
+#include <stddef.h>
+#include <stdlib.h>
 
-/**
- * _putchar - writes the character c to stdout
- * @c: The character to print
- *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
- */
-int _putchar(char c);
+/* main.h: header file containing function prototypes */
 
-/**
- * binary_to_uint - converts a binary number to an unsigned int.
- * @b: A pointer to a string of 0 and 1 characters.
- *
- * Return: The converted number, or 0 if b is NULL or contains
- *         a character that is not 0 or 1.
- */
 unsigned int binary_to_uint(const char *b);
+/* Convert a binary string to an unsigned integer */
 
-/**
- * print_binary - prints the binary representation of a number.
- * @n: The number to print.
- */
-void print_binary(unsigned long int n);
+int check_valid_string(const char *b);
+/* Check if a string is a valid binary string */
 
-/**
- * get_bit - returns the value of a bit at a given index.
- * @n: The number to get the bit from.
- * @index: The index of the bit to get.
- *
- * Return: The value of the bit at index, or -1 if an error occurred.
- */
-int get_bit(unsigned long int n, unsigned int index);
-
-/**
- * set_bit - sets the value of a bit at a given index to 1.
- * @n: A pointer to the number to modify.
- * @index: The index of the bit to set.
- *
- * Return: 1 if successful, or -1 if an error occurred.
- */
-int set_bit(unsigned long int *n, unsigned int index);
-
-/**
- * clear_bit - sets the value of a bit at a given index to 0.
- * @n: A pointer to the number to modify.
- * @index: The index of the bit to clear.
- *
- * Return: 1 if successful, or -1 if an error occurred.
- */
 int clear_bit(unsigned long int *n, unsigned int index);
+/* Set the bit at a given index to 0 */
 
-/**
- * flip_bits - returns the number of bits needed to be flipped to get
- *             from one number to another.
- * @n: The first number.
- * @m: The second number.
- *
- * Return: The number of bits needed to be flipped.
- */
 unsigned int flip_bits(unsigned long int n, unsigned long int m);
+/* Count the number of bits that are different in two numbers */
 
-/**
- * get_endianness - checks the endianness of the system.
- *
- * Return: 0 if big endian, 1 if little endian.
- */
+int get_bit(unsigned long int n, unsigned int index);
+/* Get the value of the bit at a given index */
+
 int get_endianness(void);
+/* Determine the endianness of the machine */
 
-#endif /* MAIN_H */
+int set_bit(unsigned long int *n, unsigned int index);
+/* Set the bit at a given index to 1 */
+
+void print_binary(unsigned long int n);
+/* Print a number in binary */
+
+int _putchar(char c);
+/* Write a character to stdout */
+
+#endif
 
