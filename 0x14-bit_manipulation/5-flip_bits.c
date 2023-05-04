@@ -4,7 +4,7 @@
  * Date: May 4th, 2023
  */
 
-#include "holberton.h"
+#include "main.h"
 
 /**
  * flip_bits - Calculates the number of bits that are different between
