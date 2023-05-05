@@ -14,31 +14,22 @@
 */
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int num = 0, mult = 1;
-	int len;
+unsigned int result = 0;
+int i;
 
-/* Check if b is null */
-	if (b == '\0')
-		return (0);
+if (b == NULL)
+return (0);
 
-/* Calculate the length of the string */
-	for (len = 0; b[len];)
-		len++;
+for (i = 0; b[i] != '\0'; i++)
+{
+if (b[i] == '0')
+result = result << 1;
+else if (b[i] == '1')
+result = (result << 1) | 1;
+else
+return (0);
+}
 
-/* Convert the binary string to an unsigned integer */
-	for (len -= 1; len >= 0; len--)
-	{
-/* Check if the character is a valid binary digit */
-		if (b[len] != '0' && b[len] != '1')
-			return (0);
-
-/* Convert the binary digit to an integer and add it to the result */
-		num += (b[len] - '0') * mult;
-
-/* Multiply the multiplier by 2 to calculate the next digit's value */
-		mult *= 2;
-	}
-
-	return (num);
+return (result);
 }
 
